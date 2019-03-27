@@ -1,25 +1,50 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+import generateData from './dummyData'
+import TodoTableRow from './TodoTableRow'
 import './App.css';
 
 class App extends Component {
+  state = {
+    data: []
+  }
+
+  componentDidMount() {
+    this.setState({
+      data: generateData()
+    })
+  }
+
   render() {
+    // console.log('State: ', this.state)
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <h1>My Amazing Table</h1>
+
+        <table>
+          <thead>
+            <tr>
+              <th>X</th>
+              <th>Date</th>
+              <th>ID</th>
+              <th>Account</th>
+              <th>Email</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {this.state.data.map((todo, i, array) => (
+                <TodoTableRow 
+                  todo={todo}
+                  index={i}
+                  dataArray={array}
+                  key={todo.id}
+                /> 
+            ))}
+          </tbody>
+        </table>
+
       </div>
     );
   }
