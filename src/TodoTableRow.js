@@ -1,39 +1,16 @@
-import React, { Component } from 'react'
-import plusSignIcon from './assets/001-add.svg'
-import minusSignIcon from './assets/002-minus.svg'
+import React from 'react'
 
-// TODO: change back to functional component
-export default class TodoTableRow extends Component {
-  render() {
-    let todo = this.props.todo
-
-    let priorDate 
-    if (this.props.index === 0) priorDate = ''
-    else priorDate = this.props.dataArray[this.props.index - 1].date
-    
-    return (
-      <tr>
-        {priorDate === '' || todo.date !== priorDate
-          ? <>
-              <td>
-                <img 
-                  src={minusSignIcon} 
-                  alt="Minus sign to collapse rows" 
-                />
-              </td>
-              <td colSpan="5"></td>
-            </>  
-
-          : <>
-              <td></td>
-              <td>{todo.date}</td>
-              <td>{todo.id}</td>
-              <td>{todo.account}</td>
-              <td>{todo.email}</td>
-              <td>{todo.amount}</td>
-            </> 
-        }
-      </tr>
-    )
-  }
+const TodoTableRow = (props) => {
+  return (
+    <tr key={props.todo.id}>
+        <td></td>
+        <td>{props.todo.date}</td>
+        <td>{props.todo.id}</td>
+        <td>{props.todo.account}</td>
+        <td>{props.todo.email}</td>
+        <td>{props.todo.amount}</td>
+    </tr>
+  )
 }
+
+export default TodoTableRow
