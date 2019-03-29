@@ -5,14 +5,14 @@ import minusSignIcon from './assets/002-minus.svg'
 export default function TableRowContainer(props) {
   return (
     <tr id={props.date}>
-        <td onClick={() => props.toggleCollapsedDates(props.date)}>
+        <th onClick={() => props.toggleCollapsedDates(props.date)}>
         <img 
             src={minusSignIcon} 
             alt="Minus sign to collapse rows" 
         />
-        </td>
-        <td>{props.date}</td>
-        <td colSpan="5"></td>
+        </th>
+        <th>{props.date}</th>
+        <th colSpan="5"></th>
     </tr> 
   )
 }
