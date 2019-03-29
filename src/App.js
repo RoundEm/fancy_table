@@ -7,8 +7,7 @@ import './App.css';
 class App extends Component {
   state = {
     todos: [],
-    // TODO: get unique dates with Mongo and add them:
-    // uniqueDates: ['3/26/2019', '3/31/2019']
+    // TODO: get unique dates with Mongo and add them
     uniqueDates: [
       {date: '3/26/2019', hidden: false},
       {date: '3/31/2019', hidden: false}
@@ -33,7 +32,6 @@ class App extends Component {
         const updatedTodo = Object.assign({}, todos[i], {
           hidden: !todos[i].hidden
         })
-        // console.log('updatedTodo: ', updatedTodo)
         toggledTodos.push(updatedTodo)
         sliceRangeIndexes.push(i)
       }
@@ -51,7 +49,6 @@ class App extends Component {
         const toggledCollapse = Object.assign({}, uniqueDates[i], {
           hidden: !uniqueDates[i].hidden
         })
-        // console.log('toggledCollapse: ', toggledCollapse)
         this.setState({
           uniqueDates: [
             ...uniqueDates.slice(0, i),
@@ -73,13 +70,12 @@ class App extends Component {
       for (let j = 0; j < todos.length + 1; j++) {
         // render blank row for date group header
         if (j === 0) {
-          // console.log('X ', todos[i])
           tableRows.push(
             <TableRowHeader 
               date={dates[i].date} 
               toggleCollapsedDates={this.toggleCollapsedDates}
               key={dates[i].date}
-              // dateCollapsed={todos[0].hidden}
+              dateCollapsed={dates[i].hidden}
             />
           )
         } 
