@@ -3,7 +3,7 @@ import plusSignIcon from './assets/001-add.svg'
 import minusSignIcon from './assets/002-minus.svg'
 
 export default function TableRowHeader(props) {
-  const toggleCollapseIcon = props.icon === true 
+  const toggleCollapseIcon = props.dateCollapsed === true 
     ? plusSignIcon 
     : minusSignIcon
 
