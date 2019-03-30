@@ -10,7 +10,8 @@ class App extends Component {
     // TODO: get unique dates with Mongo and add them
     uniqueDates: [
       {date: '3/26/2019', hidden: false},
-      {date: '3/31/2019', hidden: false}
+      {date: '3/31/2019', hidden: false},
+      {date: '4/2/2019', hidden: false}
     ]
   }
 
@@ -97,12 +98,12 @@ class App extends Component {
         <table>
           <thead>
             <tr>
-              <th>X</th>
-              <th>Date</th>
+              <th id="icon-thead"></th>
+              <th>DATE</th>
               <th>ID</th>
-              <th>Account</th>
-              <th>Email</th>
-              <th>Amount</th>
+              <th>ACCOUNT</th>
+              <th>EMAIL</th>
+              <th>AMOUNT</th>
             </tr>
           </thead>
           <tbody>
