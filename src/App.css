@@ -1,4 +1,5 @@
 body {
+  padding: 0;
   margin: 0 25px;
   font-family: 'Francois One', sans-serif;
   font-size: 1.4em;
@@ -16,7 +17,7 @@ tr th {
   text-align: left;
 }
 #icon-thead {
-  width: 15px;
+  width: .8em;
 }
 /* .empty-td {
   border-style: none;
@@ -24,6 +25,9 @@ tr th {
 } */
 .date-header-bgColor {
   background-color: #dadae3;
+}
+.collapse-icon {
+  min-width: 20px;
 }
 .collapse-icon:hover {
   cursor: pointer;

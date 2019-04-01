@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import generateData from './dummyData'
 import TodoTableRow from './TodoTableRow'
 import TableRowHeader from './TableRowHeader'
+import sortIcon from './assets/sort.svg'
 import './App.css';
 
 class App extends Component {
@@ -9,16 +10,35 @@ class App extends Component {
     todos: [],
     // TODO: get unique dates with Mongo and add them
     uniqueDates: [
-      {date: '3/26/2019', hidden: false},
-      {date: '3/31/2019', hidden: false},
-      {date: '4/2/2019', hidden: false}
+      {date: '4/2/2019', collapsed: false},
+      {date: '3/26/2019', collapsed: false},
+      {date: '3/31/2019', collapsed: false}
     ]
   }
-
-  // TODO: add function to sort dates prior to being rendered
   componentDidMount() {
     this.setState({
-      todos: generateData()
+      todos: generateData()    
+    }, this.sortTodosByDateDescending())
+  }
+
+  sortTodosByDateAscending = () => {
+    const sortedData = this.state.uniqueDates.sort((a, b) => {
+      const dateA = new Date(a.date)
+      const dateB = new Date(b.date)
+      return dateA - dateB
+    })
+    this.setState({
+      uniqueDates: sortedData
+    })
+  }
+  sortTodosByDateDescending = () => {
+    const sortedData = this.state.uniqueDates.sort((a, b) => {
+      const dateA = new Date(a.date)
+      const dateB = new Date(b.date)
+      return dateB - dateA
+    })
+    this.setState({
+      uniqueDates: sortedData
     })
   }
 
@@ -31,7 +51,7 @@ class App extends Component {
     for (let i = 0; i < todos.length; i++) {
       if (date === todos[i].date) {
         const updatedTodo = Object.assign({}, todos[i], {
-          hidden: !todos[i].hidden
+          collapsed: !todos[i].collapsed
         })
         toggledTodos.push(updatedTodo)
         sliceRangeIndexes.push(i)
@@ -47,13 +67,13 @@ class App extends Component {
     
     for (let i = 0; i < uniqueDates.length; i++) {
       if (date === uniqueDates[i].date) {
-        const toggledCollapse = Object.assign({}, uniqueDates[i], {
-          hidden: !uniqueDates[i].hidden
+        const toggledCollapseDate = Object.assign({}, uniqueDates[i], {
+          collapsed: !uniqueDates[i].collapsed
         })
         this.setState({
           uniqueDates: [
             ...uniqueDates.slice(0, i),
-            toggledCollapse,
+            toggledCollapseDate,
             ...uniqueDates.slice(i + 1)
           ]
         })
@@ -76,7 +96,7 @@ class App extends Component {
               date={dates[i].date} 
               toggleCollapsedDates={this.toggleCollapsedDates}
               key={dates[i].date}
-              dateCollapsed={dates[i].hidden}
+              dateCollapsed={dates[i].collapsed}
             />
           )
         } 
@@ -95,6 +115,10 @@ class App extends Component {
     return (
       <div className="App">
         <h1>My Amazing Table!</h1>
+
+        <button onClick={this.sortTodosByDateDescending}>Sort Newest to Oldest</button>
+        <button onClick={this.sortTodosByDateAscending}>Sort Oldest to Newest</button>
+
         <table>
           <thead>
             <tr>

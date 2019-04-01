@@ -1,15 +1,14 @@
 import React from 'react'
 
 const TodoTableRow = (props) => {
-  const hidden = {
-    // visibility: 'hidden'
+  const collapsed = {
     display: 'none'
   }
   
   return (
     <tr 
       key={props.todo.id}
-      style={props.todo.hidden ? hidden : null}
+      style={props.todo.collapsed ? collapsed : null}
     >
         <td className="empty-td"></td>
         <td>{props.todo.date}</td>
