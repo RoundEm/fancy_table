@@ -11,12 +11,15 @@ const generateData = () => {
         } else {
             date = '4/2/2019'
         } 
+        let firstName = faker.name.firstName()
+        let lastName = faker.name.lastName()
         data.push({
             date,
             id: faker.random.uuid().slice(0, 6),
-            account: faker.finance.accountName(), 
+            // account: faker.finance.accountName(), 
+            accountName: `${lastName}, ${firstName}`,
             amount: faker.finance.amount(),
-            email: faker.internet.email(),
+            email: `${lastName}.${firstName}@test.com`,
             hidden: false
         })    
     }

@@ -17,7 +17,7 @@ class App extends Component {
   }
   componentDidMount() {
     const todoData = generateData()
-    const sortedData = this.sortAlphbetically(todoData, 'account')
+    const sortedData = this.sortAlphbetically(todoData, 'accountName')
     this.setState({
       todos: sortedData
     }, this.sortByDateDescending())
@@ -139,7 +139,7 @@ class App extends Component {
               <th id="icon-thead"></th>
               <th>DATE</th>
               <th>ID</th>
-              <th>ACCOUNT</th>
+              <th>ACCOUNT NAME</th>
               <th>EMAIL</th>
               <th>AMOUNT</th>
             </tr>
