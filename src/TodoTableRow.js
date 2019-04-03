@@ -8,7 +8,7 @@ const TodoTableRow = (props) => {
   return (
     <tr 
       key={props.todo.id}
-      style={props.todo.collapsed ? collapsed : null}
+      style={props.hidden ? collapsed : null}
     >
         <td className="empty-td"></td>
         <td>{props.todo.date}</td>

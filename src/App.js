@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import generateData from './dummyData'
 import TodoTableRow from './TodoTableRow'
 import TableRowHeader from './TableRowHeader'
-import sortIcon from './assets/sort.svg'
+// import sortIcon from './assets/sort.svg'
 import './App.css';
 
 class App extends Component {
@@ -16,12 +16,25 @@ class App extends Component {
     ]
   }
   componentDidMount() {
+    const todoData = generateData()
+    const sortedData = this.sortAlphbetically(todoData, 'account')
     this.setState({
-      todos: generateData()    
-    }, this.sortTodosByDateDescending())
+      todos: sortedData
+    }, this.sortByDateDescending())
   }
 
-  sortTodosByDateAscending = () => {
+  sortAlphbetically = (data, sortBy) => {
+    const sortedData = data.sort((a, b) => {
+      const dataA = a[sortBy].toUpperCase()
+      const dataB = b[sortBy].toUpperCase()
+      if (dataA < dataB) return -1
+      else if (dataA > dataB) return 1
+      else return 0
+    })
+    return sortedData  
+  }
+
+  sortByDateAscending = () => {
     const sortedData = this.state.uniqueDates.sort((a, b) => {
       const dateA = new Date(a.date)
       const dateB = new Date(b.date)
@@ -31,7 +44,8 @@ class App extends Component {
       uniqueDates: sortedData
     })
   }
-  sortTodosByDateDescending = () => {
+
+  sortByDateDescending = () => {
     const sortedData = this.state.uniqueDates.sort((a, b) => {
       const dateA = new Date(a.date)
       const dateB = new Date(b.date)
@@ -45,35 +59,33 @@ class App extends Component {
   toggleCollapsedDates = date => {
     const todos = this.state.todos
     const uniqueDates = this.state.uniqueDates
-    const toggledTodos = []
-    const sliceRangeIndexes = []
     
     for (let i = 0; i < todos.length; i++) {
       if (date === todos[i].date) {
         const updatedTodo = Object.assign({}, todos[i], {
-          collapsed: !todos[i].collapsed
+          hidden: !todos[i].hidden
         })
-        toggledTodos.push(updatedTodo)
-        sliceRangeIndexes.push(i)
+        // console.log('updatedTodo: ', updatedTodo)
+        this.setState({
+          todos: [ 
+            ...todos.slice(0, i), 
+            updatedTodo,
+            ...todos.slice(i + 1)
+          ]
+        })
       }
     }
-    this.setState({
-      todos: [ 
-        ...todos.slice(0, sliceRangeIndexes[0]), 
-        ...toggledTodos,
-        ...todos.slice(sliceRangeIndexes[sliceRangeIndexes.length - 1] + 1)
-      ]
-    })  
     
     for (let i = 0; i < uniqueDates.length; i++) {
       if (date === uniqueDates[i].date) {
-        const toggledCollapseDate = Object.assign({}, uniqueDates[i], {
+        const toggleCollapseDate = Object.assign({}, uniqueDates[i], {
           collapsed: !uniqueDates[i].collapsed
         })
+        console.log('toggleCollapseDate: ', toggleCollapseDate)
         this.setState({
           uniqueDates: [
             ...uniqueDates.slice(0, i),
-            toggledCollapseDate,
+            toggleCollapseDate,
             ...uniqueDates.slice(i + 1)
           ]
         })
@@ -106,6 +118,7 @@ class App extends Component {
             <TodoTableRow 
               todo={todos[j - 1]}
               key={todos[j - 1].id}
+              hidden={dates[i].collapsed}
             /> 
           )
         }
@@ -116,8 +129,9 @@ class App extends Component {
       <div className="App">
         <h1>My Amazing Table!</h1>
 
-        <button onClick={this.sortTodosByDateDescending}>Sort Newest to Oldest</button>
-        <button onClick={this.sortTodosByDateAscending}>Sort Oldest to Newest</button>
+        <button onClick={this.sortByDateDescending}>Sort Newest to Oldest</button>
+        <button onClick={this.sortByDateAscending}>Sort Oldest to Newest</button>
+        {/* <button onClick={this.sortByAlphaAscending}>Sort Email A - Z</button> */}
 
         <table>
           <thead>
