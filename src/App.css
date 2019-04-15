@@ -42,7 +42,7 @@ button {
   font-family: 'Magra', sans-serif;
 }
 
-button:hover, .date-header-bgColor:hover {
+button:hover, button:focus, .date-header-bgColor:hover {
   background-color:  rgb(205, 164, 244);
 }
 ::selection {
