@@ -5,7 +5,7 @@ body {
   font-size: 1.4em;
 }
 table, th, td {
-  border-bottom: 1px solid #a69eb0;
+  border-bottom: 1px solid rgb(205, 164, 244);
   border-collapse: collapse;
   padding: 9px;
 }
@@ -31,4 +31,20 @@ tr th {
 }
 .collapse-icon:hover {
   cursor: pointer;
+}
+button {
+  border: 1px solid blueviolet;
+  border-radius: 5px;
+  padding: 3px 10px;
+  font-size: .9em;
+  margin-right: .5em;
+  /* font-family: 'Cute Font', cursive; */
+  font-family: 'Magra', sans-serif;
+}
+
+button:hover, .date-header-bgColor:hover {
+  background-color:  rgb(205, 164, 244);
+}
+::selection {
+  background-color:  rgb(205, 164, 244);
 }

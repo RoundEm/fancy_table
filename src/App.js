@@ -112,7 +112,7 @@ class App extends Component {
             />
           )
         } 
-        // render the rows with data. `[j - 1]` is necessary since we're looping over the array length + 1 to account for the <th> row above
+        // render the rows with data. `[j - 1]` is necessary since we're looping over the array length + 1 to account for the containing/blankish <th> row above
         else if (todos[j - 1].date === dates[i].date) { 
           tableRows.push(
             <TodoTableRow 
@@ -129,8 +129,8 @@ class App extends Component {
       <div className="App">
         <h1>My Amazing Table!</h1>
 
-        <button onClick={this.sortByDateDescending}>Sort Newest to Oldest</button>
-        <button onClick={this.sortByDateAscending}>Sort Oldest to Newest</button>
+        <button onClick={this.sortByDateDescending}>NEW TO OLD</button>
+        <button onClick={this.sortByDateAscending}>OLD TO NEW</button>
         {/* <button onClick={this.sortByAlphaAscending}>Sort Email A - Z</button> */}
 
         <table>
