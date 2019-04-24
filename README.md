@@ -1,5 +1,5 @@
 ## What is this fancy table you speak of?
-I decided to build this because wanted to get some practice making a table in React with "fancy" features like static headers and collapsable rows for related groups of data (in this case, dates). I didn't use any table libraries; everything is built from basic React, HTML, CSS and I also used Faker.js to generate the dummy data.
+I decided to build this because wanted to get some practice making a table in React with "fancy" features like static headers and collapsable rows for related groups of data (in this case, dates). I didn't use any table or style libraries; everything is built from basic React, HTML, CSS and I also used Faker.js to generate the dummy data.
 
 
 ## Create React App stuff:
