@@ -2,7 +2,7 @@
   "name": "fancy_table",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://roundem.github.io/fancy_table_practice/",
+  "homepage": "https://roundem.github.io/fancy_table",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "faker": "^4.1.0",
