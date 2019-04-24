@@ -27,9 +27,9 @@ tr th {
   border-style: none;
   background-color: #ecefff;
 } */
-.date-header-bgColor {
+/* .date-header-bgColor {
   background-color: #dadae3;
-}
+} */
 .date-header-bgColor {
   background-image: linear-gradient(to right, rgb(218, 192, 242), rgb(102, 109, 245));
   
@@ -39,7 +39,8 @@ tr th {
 }
 .collapse-icon:hover {
   cursor: pointer;
-  background-image: linear-gradient(rgb(205, 164, 244), rgb(73, 81, 233))
+  /* background-image: linear-gradient(rgb(218, 192, 242), rgb(102, 109, 245)); */
+  background-image: linear-gradient(rgb(232, 252, 237), rgb(185, 247, 203));
   /* background-color:  rgb(185, 247, 203);
   background-color:  rgb(246, 216, 182); */
 }
@@ -56,7 +57,7 @@ button {
 }
 
 button:hover {
-  background-image: linear-gradient(to top right, rgb(205, 164, 244), rgb(73, 81, 233));
+  background-image: linear-gradient(to top right, rgb(218, 192, 242), rgb(102, 109, 245));
   cursor: pointer;
   /* padding: 0 12px; */
 }
