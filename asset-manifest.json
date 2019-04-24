@@ -1,15 +1,15 @@
 {
-  "main.css": "/RoundEm/fancy_table_practice/static/css/main.15071cb7.chunk.css",
-  "main.js": "/RoundEm/fancy_table_practice/static/js/main.a82fc758.chunk.js",
-  "main.js.map": "/RoundEm/fancy_table_practice/static/js/main.a82fc758.chunk.js.map",
-  "runtime~main.js": "/RoundEm/fancy_table_practice/static/js/runtime~main.1a9bed2e.js",
-  "runtime~main.js.map": "/RoundEm/fancy_table_practice/static/js/runtime~main.1a9bed2e.js.map",
-  "static/js/2.b07df97d.chunk.js": "/RoundEm/fancy_table_practice/static/js/2.b07df97d.chunk.js",
-  "static/js/2.b07df97d.chunk.js.map": "/RoundEm/fancy_table_practice/static/js/2.b07df97d.chunk.js.map",
-  "index.html": "/RoundEm/fancy_table_practice/index.html",
-  "precache-manifest.a745990059317a35e43c4e01aeec6fef.js": "/RoundEm/fancy_table_practice/precache-manifest.a745990059317a35e43c4e01aeec6fef.js",
-  "service-worker.js": "/RoundEm/fancy_table_practice/service-worker.js",
-  "static/css/main.15071cb7.chunk.css.map": "/RoundEm/fancy_table_practice/static/css/main.15071cb7.chunk.css.map",
-  "static/media/001-add.svg": "/RoundEm/fancy_table_practice/static/media/001-add.25e36826.svg",
-  "static/media/002-minus.svg": "/RoundEm/fancy_table_practice/static/media/002-minus.7531451f.svg"
+  "main.css": "/fancy_table/static/css/main.15071cb7.chunk.css",
+  "main.js": "/fancy_table/static/js/main.00841e79.chunk.js",
+  "main.js.map": "/fancy_table/static/js/main.00841e79.chunk.js.map",
+  "runtime~main.js": "/fancy_table/static/js/runtime~main.c3a6c98d.js",
+  "runtime~main.js.map": "/fancy_table/static/js/runtime~main.c3a6c98d.js.map",
+  "static/js/2.b07df97d.chunk.js": "/fancy_table/static/js/2.b07df97d.chunk.js",
+  "static/js/2.b07df97d.chunk.js.map": "/fancy_table/static/js/2.b07df97d.chunk.js.map",
+  "index.html": "/fancy_table/index.html",
+  "precache-manifest.8b981f98ccc739373c29ad1c559472c6.js": "/fancy_table/precache-manifest.8b981f98ccc739373c29ad1c559472c6.js",
+  "service-worker.js": "/fancy_table/service-worker.js",
+  "static/css/main.15071cb7.chunk.css.map": "/fancy_table/static/css/main.15071cb7.chunk.css.map",
+  "static/media/001-add.svg": "/fancy_table/static/media/001-add.25e36826.svg",
+  "static/media/002-minus.svg": "/fancy_table/static/media/002-minus.7531451f.svg"
 }
