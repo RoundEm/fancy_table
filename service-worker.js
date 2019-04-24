@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/fancy_table_practice/precache-manifest.70c256b9d0ecf3f71dc7b20b8a604a40.js"
+  "/RoundEm/fancy_table_practice/precache-manifest.a745990059317a35e43c4e01aeec6fef.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/fancy_table_practice/index.html", {
+workbox.routing.registerNavigationRoute("/RoundEm/fancy_table_practice/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
