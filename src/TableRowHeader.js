@@ -18,7 +18,7 @@ export default function TableRowHeader(props) {
               alt="Icon that toggles collapse of row group" 
           />
         </th>
-        <th>{props.date}</th>
+        <th class="date-header">{props.date}</th>
         <th colSpan="5"></th>
     </tr> 
   )

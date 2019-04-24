@@ -7,6 +7,7 @@ const TodoTableRow = (props) => {
   
   return (
     <tr 
+      className="todo-table-tr"
       key={props.todo.id}
       style={props.hidden ? collapsed : null}
     >

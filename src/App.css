@@ -5,13 +5,17 @@ body {
   font-size: 1.4em;
 }
 table, th, td {
-  border-bottom: 1px solid rgb(205, 164, 244);
+  border-bottom: 1px solid rgb(185, 247, 203);
   border-collapse: collapse;
   padding: 9px;
 }
 table {
   /* width: 90%; */
   font-size: .9em;
+  margin-top: 25px;
+}
+thead th {
+  text-decoration: underline rgb(185, 247, 203);
 }
 tr th {
   text-align: left;
@@ -26,25 +30,41 @@ tr th {
 .date-header-bgColor {
   background-color: #dadae3;
 }
+.date-header-bgColor {
+  background-image: linear-gradient(to right, rgb(218, 192, 242), rgb(102, 109, 245));
+  
+}
 .collapse-icon {
   min-width: 20px;
 }
 .collapse-icon:hover {
   cursor: pointer;
+  background-image: linear-gradient(rgb(205, 164, 244), rgb(73, 81, 233))
+  /* background-color:  rgb(185, 247, 203);
+  background-color:  rgb(246, 216, 182); */
 }
+/* .date-header {
+} */
 button {
-  border: 1px solid blueviolet;
-  border-radius: 5px;
+  /* border-radius: 5px; */
+  background-image: linear-gradient(to bottom right, rgb(218, 192, 242), rgb(102, 109, 245));
   padding: 3px 10px;
   font-size: .9em;
   margin-right: .5em;
-  /* font-family: 'Cute Font', cursive; */
   font-family: 'Magra', sans-serif;
+  box-shadow: 2px 3px 3px rgb(185, 247, 203);
 }
 
-button:hover, button:focus, .date-header-bgColor:hover {
-  background-color:  rgb(205, 164, 244);
+button:hover {
+  background-image: linear-gradient(to top right, rgb(205, 164, 244), rgb(73, 81, 233));
+  cursor: pointer;
+  /* padding: 0 12px; */
 }
 ::selection {
-  background-color:  rgb(205, 164, 244);
+  /* background-color:  rgb(244, 164, 187); */
+  background-color:  rgb(185, 247, 203);
+}
+tr.todo-table-tr:nth-of-type(odd) {
+  /* background-color:  rgb(210, 209, 249); */
+  background-color:  rgb(232, 252, 237);
 }
